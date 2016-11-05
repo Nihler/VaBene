@@ -1,15 +1,39 @@
-﻿<!DOCYPE html>
-<html ng-app lang="pl">
+﻿<!DOCTYPE html>
+<html ng-app="vaBene" lang="pl">
 <head>
     <title>Va Bene</title>
-    
     <meta charset="utf-8">
-
-
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/strona_glowna/stronaglowna.module.js"></script>
+    <script src="app/strona_glowna/stronaglowna.component.js"></script>
 </head>
+
 <body>
-    {{"asd"}}
+  <div class="jumbotron text-center">
+    <h1>Pizzeria Va Bene</h1>
+  </div>
+  <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Strona Głowna</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Promocje</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="content">
+      <div ng-view></div>
+    </div>
+    <div class="footer">
+      JG
+    </div>
+  </div>
 </body>
 </html>
