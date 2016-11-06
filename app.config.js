@@ -1,5 +1,5 @@
 angular.
-  module('phonecatApp').
+  module('vaBene').
   config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix('!');
@@ -8,8 +8,17 @@ angular.
         when('/index', {
           template: '<strona-glowna></strona-glowna>'
         }).
-        when('/phones/:phoneId', {
-          template: '<phone-detail></phone-detail>'
+        when('/menu', {
+          template: '<menu></menu>'
+        }).
+        when('/promocje', {
+          template: '<promo></promo>'
+        }).
+        when('/kontakt', {
+          template: '<kontakt></kontakt>'
+        }).
+        when('/galeria', {
+          template: '<galeria></galeria>'
         }).
         otherwise('/index');
     }

@@ -1,16 +1,26 @@
 ﻿<!DOCTYPE html>
 <html ng-app="vaBene" lang="pl">
+
 <head>
-    <title>Va Bene</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <title>Va Bene</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
 
-    <script src="app.module.js"></script>
-    <script src="strona-glowna/stronaglowna.module.js"></script>
-    <script src="strona-glowna/stronaglowna.component.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+  <script src="strona-glowna/stronaglowna.module.js"></script>
+  <script src="strona-glowna/stronaglowna.component.js"></script>
+  <script src="menu/menu.module.js"></script>
+  <script src="menu/menu.component.js"></script>
+  <script src="galeria/galeria.module.js"></script>
+  <script src="galeria/galeria.component.js"></script>
+  <script src="kontakt/kontakt.module.js"></script>
+  <script src="kontakt/kontakt.component.js"></script>
+  <script src="promocje/promo.module.js"></script>
+  <script src="promocje/promo.component.js"></script>
 </head>
 
 <body>
@@ -18,22 +28,18 @@
     <h1>Pizzeria Va Bene</h1>
   </div>
   <div class="container">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Strona Głowna</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Promocje</a></li>
-            <li><a href="#">Kontakt</a></li>
-          </ul>
-        </div>
-      </nav>
-    <div class="content">
-      <strona-glowna></strona-glowna>
-    </div>
+    <ul class="nav nav-tabs nav-justified">
+    <li><a href="#!/index">Strona Główna</a></li>
+    <li><a href="#!/menu">Menu</a></li>
+    <li><a href="#!/promocje">Promocje</a></li>
+    <li><a href="#!/kontakt">Kontakt</a></li>
+    <li><a href="#!/galeria">Galeria</a></li>
+</ul>
+      <div ng-view></div>
     <div class="footer">
       JG
     </div>
   </div>
 </body>
+
 </html>
