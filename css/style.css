@@ -453,6 +453,10 @@ table {
     .details-text p {
         line-height: 16.6px;
     }
+		iframe{
+			width: 600px;
+			height: 400px;
+		}
 }
 @media (min-width: 451px) and (max-width: 767px) {
     .details-text {
