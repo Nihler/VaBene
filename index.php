@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VaBene</title>
+    <title>Pizzeria VaBene - Słupsk</title>
     <meta name="description" content="Restauracja VaBene - Slupsk">
-    <meta name="keywords" content="restauracja, pizzeria, pizza, VaBene, Slupsk, wloska">
+    <meta name="keywords" content="restauracja, pizzeria, pizza, VaBene, Slupsk, wloska, Va, Bene, dobre, jedzenie">
 
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
@@ -35,14 +35,14 @@
                   <a href="#galery">Galeria</a>
                 </div>
                 <!-- Use any element to open the sidenav -->
-                <span onclick="openNav()" class="pull-right menu-icon">?</span>
+                <span onclick="openNav()" class="pull-right menu-icon">☰</span>
             </div>
         </header>
         <div class="container">
         <div class="row">
           <div class="inner text-center">
             <h1 class="logo-name">VaBene</h1>
-            <h2>Restauracja włoska</h2>
+            <h2>Idealne miejsce na jedzenie!</h2>
             <p>Restauracja włoska</p>
           </div>
         </div>
@@ -56,27 +56,26 @@
             <div class="row">
                 <div class="col-md-12 text-center marb-35">
                     <h1 class="header-h">O nas</h1>
-                    <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                    <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+                    <p class="header-p"></p>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="col-md-6 col-sm-6">
                         <div class="about-info">
-                            <h2 class="heading">vel illum qui dolorem eum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero impedit inventore culpa vero accusamus in nostrum dignissimos modi, molestiae. Autem iusto esse necessitatibus ex corporis earum quaerat voluptates quibusdam dicta!</p>
+                            <h2 class="heading">Dobra restauracja to magiczne miejsce</h2>
+                            <p>Taką restauracją jest "Va Bene", gdzie przytulne, wyjątkowe wnętrze o niezapomnianym klimacie jest dodatkiem do pysznych dań. Nasza restauracja mieści się w Słupsku przy ul.Braci Gierymskich 2 gdzie od 2004 roku serwujemy dania ciepłej Italii i nie tylko.</p>
                             <div class="details-list">
-                                <ul>
+                              <!--  <ul>
                                     <li><i class="fa fa-check"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
                                     <li><i class="fa fa-check"></i>Quisque finibus eu lorem quis elementum</li>
                                     <li><i class="fa fa-check"></i>Vivamus accumsan porttitor justo sed </li>
                                     <li><i class="fa fa-check"></i>Curabitur at massa id tortor fermentum luctus</li>
-                                </ul>
+                                </ul> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6">
-                        <img src="img/res01.jpg" alt="" class="img-responsive">
+                        <img src="img/res1.jpg" alt="" class="img-responsive">
                     </div>
                 </div>
                 <div class="col-md-1"></div>
@@ -90,23 +89,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-center" style="padding:60px;">
-                      <h1 class="header-h">Nadchodzace promocje</h1>
+                      <h1 class="header-h">Wydarzenia</h1>
                       <p class="header-p"></p>
                     </div>
                     <div class="col-md-12" style="padding-bottom:60px;">
                         <div class="item active left">
                           <div class="col-md-6 col-sm-6 left-images">
-                           <img src="img/res02.jpg" class="img-responsive">
+                           <img src="img/res03.jpg" class="img-responsive">
                          </div>
                          <div class="col-md-6 col-sm-6 details-text">
                           <div class="content-holder">
                             <h2>Promocja</h2>
                             <?php   $myfile = fopen("artykuly.txt", "r") or die("Unable to open file!");
 									echo "<p>".fread($myfile,filesize("artykuly.txt"))."</p>";
-									fclose($myfile); 
+									fclose($myfile);
 							?>
                             <address>
-                              
+
                             </address>
                             <a class="btn btn-imfo btn-read-more" href="events-details.html">Dowiedz sie wiecej</a>
                           </div>
@@ -124,8 +123,7 @@
             <div class="row">
                 <div class="col-md-12 text-center marb-35">
                     <h1 class="header-h">Menu</h1>
-                    <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                    <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+                    <p class="header-p">Oto lista dań, które serwujemy w naszej restauracji</p>
                 </div>
                 <div class="col-md-12  text-center gallery-trigger">
                     <ul>
@@ -145,262 +143,263 @@
                 </div>
                 <div id="Container">
 				<div class="mix category-1 menu-restaurant" data-myorder="2">
-				<?php 
+				<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,sklad,cena FROM pizza";	
+
+									$sql="SELECT nazwa,sklad,cena FROM pizza";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]. "</span></span><span class=menu-subtitle> " . $row["sklad"]. "</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
 				</div>
 				<div class="mix category-2 menu-restaurant" data-myorder="2">
-				<?php 
+				<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,sklad,cena FROM przekaski";	
+
+									$sql="SELECT nazwa,sklad,cena FROM przekaski";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]. "</span></span><span class=menu-subtitle> " . $row["sklad"]. "</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
 				</div>
 				<div class="mix category-3 menu-restaurant" data-myorder="2">
-				<?php 
+				<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,cena FROM zupy";	
+
+									$sql="SELECT nazwa,cena FROM zupy";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]. "</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
 				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+
+
+
+
+
+
+
+
+
+
                   <div class="mix category-4 menu-restaurant" data-myorder="2">
-								<?php 
+								<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,sklad,cena FROM obiad";	
+
+									$sql="SELECT nazwa,sklad,cena FROM obiad";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]. "</span></span><span class=menu-subtitle> " . $row["sklad"]. "</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
-					 
-                      
+
+
                   </div>
 				  <div class="mix category-5 menu-restaurant" data-myorder="2">
-				<?php 
+				<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,sklad,cena FROM spaghetti";	
+
+									$sql="SELECT nazwa,sklad,cena FROM spaghetti";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]. "</span></span><span class=menu-subtitle> " . $row["sklad"]. "</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
 				</div>
 				<div class="mix category-6 menu-restaurant" data-myorder="2">
-				<?php 
+				<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,sklad,cena FROM ziemniaczane";	
+
+									$sql="SELECT nazwa,sklad,cena FROM ziemniaczane";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]. "</span></span><span class=menu-subtitle> " . $row["sklad"]. "</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
 				</div>
-				
+
 				<div class="mix category-7 menu-restaurant" data-myorder="2">
-				<?php 
+				<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,sklad,cena FROM penne";	
+
+									$sql="SELECT nazwa,sklad,cena FROM penne";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]. "</span></span><span class=menu-subtitle> " . $row["sklad"]. "</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
 				</div>
-				
+
 				<div class="mix category-8 menu-restaurant" data-myorder="2">
-				<?php 
+				<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,sklad,cena FROM warzywa";	
+
+									$sql="SELECT nazwa,sklad,cena FROM warzywa";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]. "</span></span><span class=menu-subtitle> " . $row["sklad"]. "</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
 				</div>
-				
+
+
 				<div class="mix category-9 menu-restaurant" data-myorder="2">
-				<?php 
+				<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,sklad,cena FROM salatki";	
+
+									$sql="SELECT nazwa,sklad,cena FROM salatki";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]. "</span></span><span class=menu-subtitle> " . $row["sklad"]. "</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
 				</div>
-				
+
 				<div class="mix category-10 menu-restaurant" data-myorder="2">
-				<?php 
+				<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,cena FROM zimne";	
+
+									$sql="SELECT nazwa,cena FROM zimne";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]. "</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
 				</div>
-		
+
 				<div class="mix category-11 menu-restaurant" data-myorder="2">
-				<?php 
+				<?php
 									$servername = "localhost";
 									$username = "root";
 									$password = "";
 									$dbname = "vabene";
 									$conn = mysqli_connect($servername, $username, $password, $dbname);
-								
-									$sql="SELECT nazwa,cena FROM kawa";	
+
+									$sql="SELECT nazwa,cena FROM kawa";
 									$result=mysqli_query($conn,$sql);
 									if (mysqli_num_rows($result) > 0) {
 										// output data of each row
 										while($row = mysqli_fetch_assoc($result)) {
 											echo "<span class=clearfix><p class=menu-title>" . $row["nazwa"]. "</p> <span style='left: 166px; right: 44px'; class=menu-line></span><span class=menu-price>" . $row["cena"]."</span></span><br>";
 										}
-					 
+
 									}
-					 
-					 
-					 
+
+
+
 								?>
 				</div>
                 </div>
@@ -414,8 +413,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h1 class="header-h">Kontakt</h1>
-                    <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                    <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+                    <p class="header-p">Nie wiesz jak do nas trafić? Tu znajdziesz wszystkie potrzebne informacje!</p>
                 </div>
             </div>
             <div class="row msg-row">
@@ -426,7 +424,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="dark-blue regular">Numer telefonu</h4>
-                            <p class="light-blue regular alt-p">+440 875369208 - <span class="contacts-sp"></span></p>
+                            <p class="light-blue regular alt-p">59 843 43 00<span class="contacts-sp"></span></p>
                         </div>
                     </div>
                     <div class="media-2">
@@ -435,9 +433,9 @@
                         </div>
                         <div class="media-body">
                             <h4 class="dark-blue regular">Godziny otwarcia</h4>
-                            <p class="light-blue regular alt-p"> Poniedziałek-Czwartek 09.00 - 24:00</p>
+                            <p class="light-blue regular alt-p"> Poniedziałek-Sobota 12.00 - 23:00</p>
                             <p class="light-blue regular alt-p">
-                                 Piątek-Niedziela 08:00 - 03.00
+                                 Niedziela 12:00 - 22.00
                             </p>
                         </div>
                     </div>
@@ -454,20 +452,29 @@
         <div class="row">
           <div class="col-md-12 text-center">
               <h1 class="header-h">Galeria</h1>
-              <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-              <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+              <p class="header-p">Oto kilka zdjęć naszego lokalu.</p>
           </div>
           <div class="col-md-12 text-center">
             <div class="w3-content w3-display-container" >
               <img class="mySlides" src="img\galeria1.jpg">
-              <img class="mySlides" src="img\galeria2.png">
-              <img class="mySlides" src="img\gakeria3.jpg">
+              <img class="mySlides" src="img\galeria2.jpg">
+              <img class="mySlides" src="img\galeria3.jpg">
+              <img class="mySlides" src="img\galeria4.jpg">
+              <img class="mySlides" src="img\galeria5.jpg">
+              <img class="mySlides" src="img\galeria6.jpg">
+              <img class="mySlides" src="img\galeria7.jpg">
+              <img class="mySlides" src="img\galeria8.jpg">
               <div class="w3-center w3-display-bottommiddle" style="width:100%">
                 <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
                 <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
                 <span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>
                 <span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>
                 <span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span>
+                <span class="w3-badge demo w3-border" onclick="currentDiv(4)"></span>
+                <span class="w3-badge demo w3-border" onclick="currentDiv(5)"></span>
+                <span class="w3-badge demo w3-border" onclick="currentDiv(6)"></span>
+                <span class="w3-badge demo w3-border" onclick="currentDiv(7)"></span>
+                <span class="w3-badge demo w3-border" onclick="currentDiv(8)"></span>
               </div>
             </div>
           </div>
@@ -485,7 +492,7 @@
                     <div class="widget">
                         <h4 class="widget-title">VaBene</h4>
                         <div class="social-list">
-                         
+
                             <a href="https://web.facebook.com/vabeneslupsk/?_rdr"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         </div>
                         <p class="copyright clear-float">
@@ -512,7 +519,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.mixitup.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="contactform/contactform.js"></script>
     <script>
     var slideIndex = 1;
     showDivs(slideIndex);

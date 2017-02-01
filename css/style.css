@@ -272,7 +272,7 @@ table {
     border-radius: 2px;
 }
 #event{
-    background: url('../img/res02.jpg') no-repeat;
+    background: url('../img/res2.jpg') no-repeat;
     background-size: cover;
 }
 .left-images img {
@@ -437,13 +437,14 @@ table {
 
 .w3-content{
 	max-width: 800px;
-	max-height: 500px;
+	max-height: 600px;
+	    background-size: cover;
 }
 
 
 .mySlides {display:none;
 	width: 800px;
-	height: 500px;}
+	height: 600px;}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
 .w3-badge {height:13px;width:13px;padding:0}
 @media (min-width: 768px) and (max-width: 980px) {
@@ -457,12 +458,14 @@ table {
 			width: 600px;
 			height: 400px;
 		}
+		.mySlides {display:none;}
 }
 @media (min-width: 451px) and (max-width: 767px) {
     .details-text {
         border:0px;
         border-bottom: 2px solid #A87F41;
     }
+		.galery {display:none;}
 }
 @media (min-width: 20px) and (max-width: 450px) {
     .menu-restaurant {
